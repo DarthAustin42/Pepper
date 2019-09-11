@@ -45,6 +45,7 @@ class App extends Component {
           })
           .then(function(pic) {
             this.setState({ c1img: pic})
+            console.log("HERE -->" + pic + "<")
           })
           .catch(console.log)
         });
@@ -81,7 +82,7 @@ class App extends Component {
             return data.piles[un].cards[0].image
         })
         .then(function(pic) {
-          this.refs.pc1.src = pic;
+          this.setState({ c1img: pic})
           console.log("HERE -->" + pic + "<")
         })
         .catch(console.log)
