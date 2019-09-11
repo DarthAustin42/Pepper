@@ -19,7 +19,11 @@ class App extends Component {
       logged_in: localStorage.getItem('token') ? true : false,
       username: '',
       c1img: "temp.png",
-      c2img: "temp.png"
+      c2img: "temp.png",
+      c3img: "temp.png",
+      c4img: "temp.png",
+      c5img: "temp.png",
+      c6img: "temp.png"
 
     };
   }
@@ -56,6 +60,10 @@ class App extends Component {
         .then(function(pic) {
           currentComponent.setState({ c1img: pic.cards[0].image})
           currentComponent.setState({ c2img: pic.cards[1].image})
+          currentComponent.setState({ c3img: pic.cards[2].image})
+          currentComponent.setState({ c4img: pic.cards[3].image})
+          currentComponent.setState({ c5img: pic.cards[4].image})
+          currentComponent.setState({ c6img: pic.cards[5].image})
           console.log("HERE -->" + pic + "<")
         })
         .catch(console.log);
@@ -87,7 +95,7 @@ class App extends Component {
       })
       .then(function(un) {
         userN = un;
-        url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + un + '/list/';
+        url = 'https://deckofcardsapi.com/api/deck/rmh4zzx9bvro/pile/' + un + '/list/';
         return fetch(url)
 
         .catch(console.log)
@@ -103,6 +111,10 @@ class App extends Component {
       .then(function(pic) {
         currentComponent.setState({ c1img: pic.cards[0].image})
         currentComponent.setState({ c2img: pic.cards[1].image})
+        currentComponent.setState({ c3img: pic.cards[2].image})
+        currentComponent.setState({ c4img: pic.cards[3].image})
+        currentComponent.setState({ c5img: pic.cards[4].image})
+        currentComponent.setState({ c6img: pic.cards[5].image})
         console.log("HERE -->" + pic + "<")
       })
       .catch(console.log);
@@ -148,7 +160,7 @@ class App extends Component {
   setColor = (color) => {
     this.setState({ color })
 
-    var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + this.state.username + '/list/'
+    var url = 'https://deckofcardsapi.com/api/deck/rmh4zzx9bvro/pile/' + this.state.username + '/list/'
     fetch(url)
     .then(res => res.json())
     .then((data) => {
