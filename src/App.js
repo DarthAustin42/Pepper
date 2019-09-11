@@ -22,9 +22,10 @@ class App extends Component {
 
     };
   }
-  componentDidMount = () => {
+  componentDidMount() {
     var url = "";
     var userN = "";
+    let currentComponent = this;
     if (this.state.logged_in) {
       fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/core/current_user/', {
         headers: {
@@ -48,11 +49,11 @@ class App extends Component {
         })
         .then(function(json) {
           console.log(json);
-          this.setState({ cards: json });
+          currentComponent.setState({ cards: json });
           return json.piles[userN].cards[0].image
         })
         .then(function(pic) {
-          this.setState({ c1img: pic})
+          currentComponent.setState({ c1img: pic})
           console.log("HERE -->" + pic + "<")
         })
         .catch(console.log);
