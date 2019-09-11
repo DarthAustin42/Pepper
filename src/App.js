@@ -18,7 +18,8 @@ class App extends Component {
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
       username: '',
-      c1img: "temp.png"
+      c1img: "temp.png",
+      c2img: "temp.png"
 
     };
   }
@@ -50,10 +51,11 @@ class App extends Component {
         .then(function(json) {
           console.log(json);
           currentComponent.setState({ cards: json });
-          return json.piles[userN].cards[0].image
+          return json.piles[userN]
         })
         .then(function(pic) {
-          currentComponent.setState({ c1img: pic})
+          currentComponent.setState({ c1img: pic.cards[0].image})
+          currentComponent.setState({ c2img: pic.cards[1].image})
           console.log("HERE -->" + pic + "<")
         })
         .catch(console.log);
@@ -96,10 +98,11 @@ class App extends Component {
       .then(function(json) {
         console.log(json);
         currentComponent.setState({ cards: json });
-        return json.piles[userN].cards[0].image
+        return json.piles[userN]
       })
       .then(function(pic) {
-        currentComponent.setState({ c1img: pic})
+        currentComponent.setState({ c1img: pic.cards[0].image})
+        currentComponent.setState({ c2img: pic.cards[1].image})
         console.log("HERE -->" + pic + "<")
       })
       .catch(console.log);
@@ -212,7 +215,12 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" src={this.state.c1img} alt="Ace of Spades"></img>
+                <img class="cardImg" src={this.state.c1img} alt="Card1"></img>
+                <img class="cardImg" src={this.state.c2img} alt="Card2"></img>
+                <img class="cardImg" src={this.state.c3img} alt="Card3"></img>
+                <img class="cardImg" src={this.state.c4img} alt="Card4"></img>
+                <img class="cardImg" src={this.state.c5img} alt="Card5"></img>
+                <img class="cardImg" src={this.state.c6img} alt="Card6"></img>
               </div>
               </div>
             : <div>
