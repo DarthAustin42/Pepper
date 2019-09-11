@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function Nav(props) {
   const logged_out_nav = (
-    <h2 onClick={() => props.display_form('login')}>Login</h2>
+    <h5 onClick={() => props.display_form('login')}>Login</h5>
   );
 
   const logged_in_nav = (
-    <h2 onClick={props.handle_logout}>Logout</h2>
+    <h5 onClick={props.handle_logout}>Logout</h5>
   );
   return <span class="navbar-text">{props.logged_in ? logged_in_nav : logged_out_nav}</span>;
 }

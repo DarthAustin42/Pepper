@@ -134,6 +134,11 @@ class App extends Component {
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
+              <li class="nav-item">
+                {this.state.logged_in
+                ? `Hello, ${this.state.username}`
+                : ''}
+              </li>
             </ul>
             <Nav
               logged_in={this.state.logged_in}
