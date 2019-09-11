@@ -24,7 +24,7 @@ class App extends Component {
   }
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com/core/current_user/', {
+      fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/core/current_user/', {
         headers: {
           Authorization: `JWT ${localStorage.getItem('token')}`
         }
