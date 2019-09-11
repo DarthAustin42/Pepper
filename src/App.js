@@ -55,14 +55,21 @@ class App extends Component {
           username: json.user.username
         });
         url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/';
-      })
-      .then(function() {
         fetch(url)
         .then(res => res.json())
         .then((data) => {
             this.setState({ cards: data })
         })
         .catch(console.log)
+      })
+      .then(function() {
+        console.log("done");
+      //   fetch(url)
+      //   .then(res => res.json())
+      //   .then((data) => {
+      //       this.setState({ cards: data })
+      //   })
+      //   .catch(console.log)
       });
   };
 
