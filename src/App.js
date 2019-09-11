@@ -22,7 +22,7 @@ class App extends Component {
 
     };
   }
-  componentDidMount() {
+  componentDidMount = () => {
     var url = "";
     var userN = "";
     if (this.state.logged_in) {
@@ -46,12 +46,12 @@ class App extends Component {
         .then(function(response) {
           return response.json();
         })
-        .then(function(json) => {
+        .then(function(json) {
           console.log(json);
           this.setState({ cards: json });
           return json.piles[userN].cards[0].image
         })
-        .then(function(pic) => {
+        .then(function(pic) {
           this.setState({ c1img: pic})
           console.log("HERE -->" + pic + "<")
         })
