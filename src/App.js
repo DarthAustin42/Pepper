@@ -17,7 +17,8 @@ class App extends Component {
       cards:[],
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
-      username: ''
+      username: '',
+      id: 0
 
     };
   }
@@ -31,6 +32,7 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
+          this.setStat({ id: json.id });
         });
     }
   }
@@ -138,7 +140,7 @@ class App extends Component {
             <div>
               <span class="navbar-text">
                 <h5 id="loginGreetText">{this.state.logged_in
-                    ? `Hello, ${this.state.username}`
+                    ? `Hello, ${this.state.username} (User ${this.state.id})`
                     : 'Please Sign In'}</h5>
                 <Nav
                   logged_in={this.state.logged_in}
