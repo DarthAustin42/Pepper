@@ -110,8 +110,8 @@ class App extends Component {
       document.body.style.backgroundColor = col
       console.log(this.state.cards)
       var test = this.state.username
-      console.log(this.state["cards"])
-      console.log(this.state.cards.piles[test])
+      console.log(this.state.cards.piles["super"])
+      console.log(this.state.cards.piles[this.state.username])
     })
 
     let form;
