@@ -161,7 +161,7 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades"></img>
+                <img class="cardImg" src={this.state.cards.piles.super.cards[0].image} alt="Ace of Spades"></img>
               </div>
               </div>
             : <div>
