@@ -40,12 +40,12 @@ class App extends Component {
           .then(res => res.json())
           .then((data) => {
               this.setState({ cards: data })
+              return data.piles[un].cards[0].image
+          })
+          .then(function(pic) {
+            this.refs.pc1.src = pic;
           })
           .catch(console.log)
-          return data.piles[un].cards[0].image
-        })
-        .then(function(pic) {
-          this.refs.pc1.src = pic;
         });
 
     }
@@ -77,12 +77,12 @@ class App extends Component {
         .then(res => res.json())
         .then((data) => {
             this.setState({ cards: data })
+            return data.piles[un].cards[0].image
+        })
+        .then(function(pic) {
+          this.refs.pc1.src = pic;
         })
         .catch(console.log)
-        return data.piles[un].cards[0].image
-      })
-      .then(function(pic) {
-        this.refs.pc1.src = pic;
       });
   };
 
