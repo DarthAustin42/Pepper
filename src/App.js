@@ -82,6 +82,7 @@ class App extends Component {
         })
         .then(function(pic) {
           this.refs.pc1.src = pic;
+          console.log("HERE -->" + pic + "<")
         })
         .catch(console.log)
       });
