@@ -156,10 +156,9 @@ class App extends Component {
 
               <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
-              {form}
               </div>
             : <div>
-              YAY
+              {form}
               </div>}
       </div>
     )
