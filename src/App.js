@@ -32,7 +32,10 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
-          url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/';
+          return json.username
+        })
+        .then(function(un) {
+          url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + un + '/list/';
           fetch(url)
           .then(res => res.json())
           .then((data) => {
@@ -62,22 +65,16 @@ class App extends Component {
           displayed_form: '',
           username: json.user.username
         });
-        url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/';
+        return json.user.username;
+      })
+      .then(function(un) {
+        url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + un + '/list/';
         fetch(url)
         .then(res => res.json())
         .then((data) => {
             this.setState({ cards: data })
         })
         .catch(console.log)
-      })
-      .then(function() {
-        console.log("done");
-      //   fetch(url)
-      //   .then(res => res.json())
-      //   .then((data) => {
-      //       this.setState({ cards: data })
-      //   })
-      //   .catch(console.log)
       });
   };
 
