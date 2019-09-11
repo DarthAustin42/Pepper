@@ -63,6 +63,8 @@ class App extends Component {
 
   handle_login = (e, data) => {
     var url = "";
+    var userN = "";
+    let currentComponent = this;
     e.preventDefault();
     fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/token-auth/', {
       method: 'POST',
@@ -82,19 +84,25 @@ class App extends Component {
         return json.user.username;
       })
       .then(function(un) {
+        userN = un;
         url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + un + '/list/';
-        fetch(url)
-        .then(res => res.json())
-        .then((data) => {
-            this.setState({ cards: data })
-            return data.piles[un].cards[0].image
-        })
-        .then(function(pic) {
-          this.setState({ c1img: pic})
-          console.log("HERE -->" + pic + "<")
-        })
+        return fetch(url)
+
         .catch(console.log)
-      });
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        console.log(json);
+        currentComponent.setState({ cards: json });
+        return json.piles[userN].cards[0].image
+      })
+      .then(function(pic) {
+        currentComponent.setState({ c1img: pic})
+        console.log("HERE -->" + pic + "<")
+      })
+      .catch(console.log);
   };
 
   handle_signup = (e, data) => {
