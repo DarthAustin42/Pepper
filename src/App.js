@@ -17,8 +17,7 @@ class App extends Component {
       cards:[],
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
-      username: '',
-      id: 0
+      username: ''
 
     };
   }
@@ -32,19 +31,6 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
-          switch (json.username) {
-            case "super":
-              this.setState({ id: 1});
-              console.log(json.username);
-              break;
-            case "test1":
-              this.setState({ id: 2});
-              console.log(json.username);
-              break;
-            default:
-              console.log(json.username);
-              break;
-          }
         });
     }
   }
@@ -66,19 +52,6 @@ class App extends Component {
           displayed_form: '',
           username: json.user.username
         });
-        switch (json.username) {
-          case "super":
-            this.setState({ id: 1});
-            console.log(json.username);
-            break;
-          case "test1":
-            this.setState({ id: 2});
-            console.log(json.username);
-            break;
-          default:
-            console.log(json.username);
-            break;
-        }
       });
   };
 
@@ -99,19 +72,6 @@ class App extends Component {
           displayed_form: '',
           username: json.username,
         });
-        switch (json.username) {
-          case "super":
-            this.setState({ id: 1});
-            console.log(json.username);
-            break;
-          case "test1":
-            this.setState({ id: 2});
-            console.log(json.username);
-            break;
-          default:
-            console.log(json.username);
-            break;
-        }
       });
   };
 
@@ -134,7 +94,7 @@ class App extends Component {
 
   setColor = (color) => {
     this.setState({ color })
-    fetch('https://deckofcardsapi.com/api/deck/c02izkbzt534/pile/P2/list/')
+    fetch('https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + ${this.state.username} + '/list/')
     .then(res => res.json())
     .then((data) => {
         this.setState({ cards: data })
@@ -178,7 +138,7 @@ class App extends Component {
             <div>
               <span class="navbar-text">
                 <h5 id="loginGreetText">{this.state.logged_in
-                    ? `Hello, ${this.state.username} (User ${this.state.id})`
+                    ? `Hello, ${this.state.username}`
                     : 'Please Sign In'}</h5>
                 <Nav
                   logged_in={this.state.logged_in}
