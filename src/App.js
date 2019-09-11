@@ -150,13 +150,17 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <div style={{ textAlign: "center" }}>
-          <button onClick={() => this.send() }>Change Color</button>
+        {this.state.logged_in
+            ? <div style={{ textAlign: "center" }}>
+              <button onClick={() => this.send() }>Change Color</button>
 
-          <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-          <button id="red" onClick={() => this.setColor('red')}>Red</button>
-          {form}
-        </div>
+              <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
+              <button id="red" onClick={() => this.setColor('red')}>Red</button>
+              {form}
+              </div>
+            : <div>
+              YAY
+              </div>}
       </div>
     )
   }
