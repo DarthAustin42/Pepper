@@ -160,7 +160,7 @@ class App extends Component {
               <ul class="table">
               <li>
                 <a class="card" href="#" style="padding: 0px">
-                  <img src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades" style="width: 100%;">
+                  <img src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades" style="width: 100%;"></img>
                 </a>
               </li>
               </ul>
