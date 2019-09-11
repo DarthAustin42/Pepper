@@ -40,13 +40,14 @@ class App extends Component {
           userN = un;
           url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + un + '/list/';
           return fetch(url)
-          
+
           .catch(console.log)
         })
         .then(function(response) {
           return response.json();
         })
         .then(function(json) {
+          console.log(json);
           this.setState({ cards: json })
           return json.piles[userN].cards[0].image
         })
