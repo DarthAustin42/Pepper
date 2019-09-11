@@ -7,7 +7,7 @@ function Nav(props) {
   );
 
   const logged_in_nav = (
-    <h5 onClick={props.handle_logout}>Logout</h5>
+    <h5 class="loginButtonText" onClick={props.handle_logout}>Logout</h5>
   );
   return <div class="loginButtonText">{props.logged_in ? logged_in_nav : logged_out_nav}</div>;
 }
