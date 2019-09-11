@@ -65,20 +65,20 @@ class App extends Component {
           logged_in: true,
           displayed_form: '',
           username: json.user.username
-          switch (json.username) {
-            case "super":
-              this.setState({ id: 1});
-              console.log(json.username);
-              break;
-            case "test1":
-              this.setState({ id: 2});
-              console.log(json.username);
-              break;
-            default:
-              console.log(json.username);
-              break;
-          }
         });
+        switch (json.username) {
+          case "super":
+            this.setState({ id: 1});
+            console.log(json.username);
+            break;
+          case "test1":
+            this.setState({ id: 2});
+            console.log(json.username);
+            break;
+          default:
+            console.log(json.username);
+            break;
+        }
       });
   };
 
@@ -97,21 +97,21 @@ class App extends Component {
         this.setState({
           logged_in: true,
           displayed_form: '',
-          username: json.username
-          switch (json.username) {
-            case "super":
-              this.setState({ id: 1});
-              console.log(json.username);
-              break;
-            case "test1":
-              this.setState({ id: 2});
-              console.log(json.username);
-              break;
-            default:
-              console.log(json.username);
-              break;
-          }
+          username: json.username,
         });
+        switch (json.username) {
+          case "super":
+            this.setState({ id: 1});
+            console.log(json.username);
+            break;
+          case "test1":
+            this.setState({ id: 2});
+            console.log(json.username);
+            break;
+          default:
+            console.log(json.username);
+            break;
+        }
       });
   };
 
