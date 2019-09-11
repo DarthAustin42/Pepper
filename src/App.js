@@ -136,11 +136,11 @@ class App extends Component {
               </li>
             </ul>
             <span class="navbar-text">
-              
+              <Nav class="loginNav"
                 logged_in={this.state.logged_in}
                 display_form={this.display_form}
                 handle_logout={this.handle_logout}
-
+              />
               {this.state.logged_in
               ? `Hello, ${this.state.username}`
               : 'Please Sign In'}
