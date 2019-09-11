@@ -54,13 +54,6 @@ class App extends Component {
           username: json.user.username
         });
       });
-      var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + this.state.username + '/list/'
-      fetch(url)
-      .then(res => res.json())
-      .then((data) => {
-          this.setState({ cards: data })
-      })
-      .catch(console.log)
   };
 
   handle_signup = (e, data) => {
@@ -102,7 +95,14 @@ class App extends Component {
 
   setColor = (color) => {
     this.setState({ color })
-
+    
+    var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + this.state.username + '/list/'
+    fetch(url)
+    .then(res => res.json())
+    .then((data) => {
+        this.setState({ cards: data })
+    })
+    .catch(console.log)
   }
 
   render() {
