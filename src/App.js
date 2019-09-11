@@ -32,7 +32,16 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
-          this.setStat({ id: json.id });
+          switch (json.username) {
+            case "super":
+              this.setState({ id: 1});
+              break;
+            case "test1":
+                this.setState({ id: 2});
+                break;
+            default:
+
+          }
         });
     }
   }
@@ -140,7 +149,7 @@ class App extends Component {
             <div>
               <span class="navbar-text">
                 <h5 id="loginGreetText">{this.state.logged_in
-                    ? `Hello, ${this.state.username} (User ${this.state.id})`
+                    ? `Hello, ${this.state.username} (User ${this.state.id}))`
                     : 'Please Sign In'}</h5>
                 <Nav
                   logged_in={this.state.logged_in}
