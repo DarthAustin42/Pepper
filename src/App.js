@@ -31,6 +31,13 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
+          url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/';
+          fetch(url)
+          .then(res => res.json())
+          .then((data) => {
+              this.setState({ cards: data })
+          })
+          .catch(console.log)
         });
 
     }
