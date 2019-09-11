@@ -141,7 +141,6 @@ class App extends Component {
                 display_form={this.display_form}
                 handle_logout={this.handle_logout}
               />
-              {form}
               {this.state.logged_in
               ? `Hello, ${this.state.username}`
               : 'Please Sign In'}
@@ -153,7 +152,7 @@ class App extends Component {
 
           <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
           <button id="red" onClick={() => this.setColor('red')}>Red</button>
-
+          {form}
         </div>
       </div>
     )
