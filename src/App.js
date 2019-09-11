@@ -94,7 +94,7 @@ class App extends Component {
 
   setColor = (color) => {
     this.setState({ color })
-    var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + ${this.state.username} + '/list/'
+    var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + this.state.username + '/list/'
     fetch(url)
     .then(res => res.json())
     .then((data) => {
