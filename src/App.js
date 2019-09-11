@@ -156,6 +156,14 @@ class App extends Component {
 
               <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
+
+              <ul class="table">
+              <li>
+                <a class="card" href="#" style="padding: 0px">
+                  <img src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades" style="width: 100%;">
+                </a>
+              </li>
+              </ul>
               </div>
             : <div>
               {form}
