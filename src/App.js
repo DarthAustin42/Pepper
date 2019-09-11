@@ -135,16 +135,11 @@ class App extends Component {
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
             </ul>
-            <span class="navbar-text">
-              <Nav class="loginNav"
-                logged_in={this.state.logged_in}
-                display_form={this.display_form}
-                handle_logout={this.handle_logout}
-              />
-              {this.state.logged_in
-              ? `Hello, ${this.state.username}`
-              : 'Please Sign In'}
-            </span>
+            <Nav
+              logged_in={this.state.logged_in}
+              display_form={this.display_form}
+              handle_logout={this.handle_logout}
+            />
           </div>
         </nav>
         <div style={{ textAlign: "center" }}>

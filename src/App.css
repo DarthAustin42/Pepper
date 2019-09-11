@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-left: 20px;
 }
 
 .App-logo {
@@ -32,6 +33,7 @@
   }
 }
 
-.loginNav ul {
-  list-style: none;
+input {
+  display: block;
+  margin: 5px 0 5px;
 }
