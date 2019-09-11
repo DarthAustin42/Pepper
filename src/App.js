@@ -42,6 +42,10 @@ class App extends Component {
               this.setState({ cards: data })
           })
           .catch(console.log)
+          return data.piles[un].cards[0].image
+        })
+        .then(function(pic) {
+          this.refs.pc1.src = pic;
         });
 
     }
@@ -185,7 +189,7 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" src={this.state.cards.piles[this.state.username].cards[0].image} alt="Ace of Spades"></img>
+                <img class="cardImg" id="pc1" src="" alt="Ace of Spades"></img>
               </div>
               </div>
             : <div>
