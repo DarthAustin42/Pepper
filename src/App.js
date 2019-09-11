@@ -123,18 +123,38 @@ class App extends Component {
     }
 
     return (
-       <div className="App">
-        <Nav
-          logged_in={this.state.logged_in}
-          display_form={this.display_form}
-          handle_logout={this.handle_logout}
-        />
-        {form}
-        <h3>
-          {this.state.logged_in
-            ? `Hello, ${this.state.username}`
-            : 'Please Log In'}
-        </h3>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Pepper</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" ari$
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <Nav
+                logged_in={this.state.logged_in}
+                display_form={this.display_form}
+                handle_logout={this.handle_logout}
+              />
+              {form}
+              {this.state.logged_in
+              ? `Hello, ${this.state.username}`
+              : 'Please Sign In'}
+            </span>
+          </div>
+        </nav>
+        <div style={{ textAlign: "center" }}>
+          <button onClick={() => this.send() }>Change Color</button>
+
+          <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
+          <button id="red" onClick={() => this.setColor('red')}>Red</button>
+
+        </div>
       </div>
     )
   }
