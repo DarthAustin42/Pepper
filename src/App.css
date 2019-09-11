@@ -37,3 +37,12 @@ input {
   display: block;
   margin: 5px 0 5px;
 }
+
+#loginGreetText {
+  display: inline;
+  margin-right: 25px;
+}
+
+.loginButtonText {
+  display: inline;
+}
