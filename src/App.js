@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -19,7 +23,7 @@ class App extends Component {
   }
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://localhost:8000/core/current_user/', {
+      fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com/core/current_user/', {
         headers: {
           Authorization: `JWT ${localStorage.getItem('token')}`
         }
@@ -33,7 +37,7 @@ class App extends Component {
 
   handle_login = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/token-auth/', {
+    fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/token-auth/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -53,7 +57,7 @@ class App extends Component {
 
   handle_signup = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/core/users/', {
+    fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/core/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -106,33 +110,31 @@ class App extends Component {
       console.log(this.state.cards)
     })
 
+    let form;
+    switch (this.state.displayed_form) {
+      case 'login':
+        form = <LoginForm handle_login={this.handle_login} />;
+        break;
+      case 'signup':
+        form = <SignupForm handle_signup={this.handle_signup} />;
+        break;
+      default:
+        form = null;
+    }
+
     return (
-      <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Pepper</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-            <span class="navbar-text">
-              {this.state.logged_in
-              ? `Hello, ${this.state.username}`
-              : 'Please Log In'}
-            </span>
-          </div>
-        </nav>
-        <div style={{ textAlign: "center" }}>
-          <button onClick={() => this.send() }>Change Color</button>
-
-          <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-          <button id="red" onClick={() => this.setColor('red')}>Red</button>
-
-        </div>
+       <div className="App">
+        <Nav
+          logged_in={this.state.logged_in}
+          display_form={this.display_form}
+          handle_logout={this.handle_logout}
+        />
+        {form}
+        <h3>
+          {this.state.logged_in
+            ? `Hello, ${this.state.username}`
+            : 'Please Log In'}
+        </h3>
       </div>
     )
   }
