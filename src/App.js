@@ -17,7 +17,8 @@ class App extends Component {
       cards:[],
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
-      username: ''
+      username: '',
+      c1img: "temp.png"
 
     };
   }
@@ -43,7 +44,7 @@ class App extends Component {
               return data.piles[un].cards[0].image
           })
           .then(function(pic) {
-            this.refs.pc1.src = pic;
+            this.setState({ c1img: pic})
           })
           .catch(console.log)
         });
@@ -193,7 +194,7 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" ref="pc1" src="" alt="Ace of Spades"></img>
+                <img class="cardImg" src={this.state.c1img} alt="Ace of Spades"></img>
               </div>
               </div>
             : <div>
