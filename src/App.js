@@ -109,6 +109,7 @@ class App extends Component {
     socket.on('change color', (col) => {
       document.body.style.backgroundColor = col
       console.log(this.state.cards)
+      console.log(this.state.cards.piles.super.cards[0])
     })
 
     let form;
@@ -157,13 +158,9 @@ class App extends Component {
               <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
-              <ul class="table">
-              <li>
-                <a class="card" href="#">
-                  <img class="cardImg" src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades"></img>
-                </a>
-              </li>
-              </ul>
+              <div>
+                <img class="cardImg" src="https://deckofcardsapi.com/static/img/AS.png" alt="Ace of Spades"></img>
+              </div>
               </div>
             : <div>
               {form}
