@@ -180,7 +180,7 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                //<img class="cardImg" src={this.state.cards.piles[this.state.username].cards[0].image} alt="Ace of Spades"></img>
+                
               </div>
               </div>
             : <div>
