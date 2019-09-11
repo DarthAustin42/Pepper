@@ -109,8 +109,8 @@ class App extends Component {
     socket.on('change color', (col) => {
       document.body.style.backgroundColor = col
       console.log(this.state.cards)
-      var test = "cards.piles." + this.state.username
-      console.log(this.state[test].cards[0])
+      var test = this.state.username
+      console.log(this.state.card.piles[test].cards[0])
     })
 
     let form;
