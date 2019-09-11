@@ -22,6 +22,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
+    var url = "";
     if (this.state.logged_in) {
       fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/core/current_user/', {
         headers: {
