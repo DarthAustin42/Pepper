@@ -65,6 +65,19 @@ class App extends Component {
           logged_in: true,
           displayed_form: '',
           username: json.user.username
+          switch (json.username) {
+            case "super":
+              this.setState({ id: 1});
+              console.log(json.username);
+              break;
+            case "test1":
+              this.setState({ id: 2});
+              console.log(json.username);
+              break;
+            default:
+              console.log(json.username);
+              break;
+          }
         });
       });
   };
@@ -85,13 +98,26 @@ class App extends Component {
           logged_in: true,
           displayed_form: '',
           username: json.username
+          switch (json.username) {
+            case "super":
+              this.setState({ id: 1});
+              console.log(json.username);
+              break;
+            case "test1":
+              this.setState({ id: 2});
+              console.log(json.username);
+              break;
+            default:
+              console.log(json.username);
+              break;
+          }
         });
       });
   };
 
   handle_logout = () => {
     localStorage.removeItem('token');
-    this.setState({ logged_in: false, username: '' });
+    this.setState({ logged_in: false, username: '', id: 0 });
   };
 
   display_form = form => {
