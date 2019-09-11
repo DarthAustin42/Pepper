@@ -231,12 +231,12 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()></img>
-                <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()></img>
-                <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()></img>
-                <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()></img>
-                <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()></img>
-                <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
+                <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
+                <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
+                <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()}></img>
+                <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()}></img>
+                <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()}></img>
               </div>
               </div>
             : <div>
