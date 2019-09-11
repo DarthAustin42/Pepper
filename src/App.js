@@ -79,6 +79,10 @@ class App extends Component {
             this.setState({ cards: data })
         })
         .catch(console.log)
+        return data.piles[un].cards[0].image
+      })
+      .then(function(pic) {
+        this.refs.pc1.src = pic;
       });
   };
 
