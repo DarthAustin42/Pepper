@@ -40,7 +40,7 @@ class App extends Component {
                 this.setState({ id: 2});
                 break;
             default:
-
+                console.log(json.username);
           }
         });
     }
@@ -149,7 +149,7 @@ class App extends Component {
             <div>
               <span class="navbar-text">
                 <h5 id="loginGreetText">{this.state.logged_in
-                    ? `Hello, ${this.state.username} (User ${this.state.id}))`
+                    ? `Hello, ${this.state.username} (User ${this.state.id})`
                     : 'Please Sign In'}</h5>
                 <Nav
                   logged_in={this.state.logged_in}
