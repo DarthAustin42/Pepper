@@ -37,6 +37,7 @@ class App extends Component {
   }
 
   handle_login = (e, data) => {
+    var url = "";
     e.preventDefault();
     fetch('http://ec2-3-19-188-25.us-east-2.compute.amazonaws.com:8000/token-auth/', {
       method: 'POST',
@@ -53,9 +54,9 @@ class App extends Component {
           displayed_form: '',
           username: json.user.username
         });
+        url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/';
       })
       .then(function() {
-        var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + json.user.username + '/list/'
         fetch(url)
         .then(res => res.json())
         .then((data) => {
