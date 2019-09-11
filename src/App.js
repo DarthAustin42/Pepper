@@ -53,6 +53,15 @@ class App extends Component {
           displayed_form: '',
           username: json.user.username
         });
+      })
+      .then(function() {
+        var url = 'https://deckofcardsapi.com/api/deck/8g3uvxxh9f3c/pile/' + this.state.username + '/list/'
+        fetch(url)
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({ cards: data })
+        })
+        .catch(console.log)
       });
   };
 
@@ -113,7 +122,7 @@ class App extends Component {
       console.log(this.state.cards)
       var test = this.state.username
       //console.log(this.state.cards.piles["super"])
-      //console.log(this.state.cards.piles[this.state.username].cards[0].image)
+      console.log(this.state.cards.piles[this.state.username].cards[0].image)
     })
 
     let form;
