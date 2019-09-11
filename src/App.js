@@ -192,6 +192,10 @@ class App extends Component {
         form = null;
     }
 
+    const imageClick = () => {
+      console.log('Click');
+    }
+
     return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -227,12 +231,12 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" src={this.state.c1img} alt="Card1"></img>
-                <img class="cardImg" src={this.state.c2img} alt="Card2"></img>
-                <img class="cardImg" src={this.state.c3img} alt="Card3"></img>
-                <img class="cardImg" src={this.state.c4img} alt="Card4"></img>
-                <img class="cardImg" src={this.state.c5img} alt="Card5"></img>
-                <img class="cardImg" src={this.state.c6img} alt="Card6"></img>
+                <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()></img>
+                <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()></img>
               </div>
               </div>
             : <div>
