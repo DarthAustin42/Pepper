@@ -46,3 +46,11 @@ input {
 .loginButtonText {
   display: inline;
 }
+
+.card {
+  padding: 0px !important;
+}
+
+.cardImg {
+  width: 100%;
+}
