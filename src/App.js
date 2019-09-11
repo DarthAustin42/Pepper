@@ -35,12 +35,15 @@ class App extends Component {
           switch (json.username) {
             case "super":
               this.setState({ id: 1});
+              console.log(json.username);
               break;
             case "test1":
-                this.setState({ id: 2});
-                break;
+              this.setState({ id: 2});
+              console.log(json.username);
+              break;
             default:
-                console.log(json.username);
+              console.log(json.username);
+              break;
           }
         });
     }
