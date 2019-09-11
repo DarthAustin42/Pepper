@@ -193,7 +193,7 @@ class App extends Component {
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
               <div>
-                <img class="cardImg" id="pc1" src="" alt="Ace of Spades"></img>
+                <img class="cardImg" ref="pc1" src="" alt="Ace of Spades"></img>
               </div>
               </div>
             : <div>
