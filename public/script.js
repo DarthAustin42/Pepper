@@ -1,11 +1,10 @@
 function onResizeFunction() {
-  console.log("HEYO THERE");
-  console.log($(document).width());
-  console.log($(document).height());
-  var newWidth = $(document).width() * 0.07;
-  var newHeight = $(document).height() * 0.0972461;
+  var docWidth = $(document).width();
+  var docHeight = $(document).height();
+  var newWidth = docWidth * 0.07;
+  var newHeight = docHeight * 0.17;
 
-  if (newWidth < newHeight) {
+  if (docWidth < docHeight) {
     $(".cardImg").css( "width", newWidth);
     newHeight = newWidth * 1.3893805;
     $(".cardImg").css( "height", newHeight);
