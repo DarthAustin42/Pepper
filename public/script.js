@@ -9,7 +9,7 @@ function onResizeFunction() {
   var newWidth = docWidth * 0.06;
   var newHeight = docHeight * 0.1605643;
 
-  var deck3LeftLoc = ()(docWidth - deck13Width) / 2);
+  var deck3LeftLoc = ((docWidth - deck13Width) / 2);
 
   console.log(deck3LeftLoc);
 
