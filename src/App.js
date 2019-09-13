@@ -230,7 +230,7 @@ class App extends Component {
               <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
               <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
-              <div>
+              <div id="deck3" class="allDecks">
                 <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
                 <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
                 <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>

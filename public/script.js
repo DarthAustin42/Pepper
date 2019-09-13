@@ -1,10 +1,12 @@
 function onResizeFunction() {
-  console.log($(document).width());
-  console.log($(document).height());
   var docWidth = $(document).width();
   var docHeight = $(document).height();
+  var deck13Width = $("#deck3").width();
+
   var newWidth = docWidth * 0.06;
   var newHeight = docHeight * 0.1605643;
+
+  var deck3LeftLoc = (docWidth - deck13Width) / 2;
 
   if (docWidth < docHeight) {
     $(".cardImg").css( "width", newWidth);
@@ -16,4 +18,6 @@ function onResizeFunction() {
     newWidth = newHeight * 0.7197452;
     $(".cardImg").css( "width", newWidth);
   }
+
+  $("#deck3").css( "left", deck3LeftLoc );
 }
