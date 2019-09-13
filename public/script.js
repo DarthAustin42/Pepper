@@ -1,1 +1,3 @@
-console.log("HEYO THERE");
+function onResizeFunction() {
+  console.log("HEYO THERE");
+}
