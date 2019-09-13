@@ -1,8 +1,10 @@
 function onResizeFunction() {
+  console.log($(document).width());
+  console.log($(document).height());
   var docWidth = $(document).width();
   var docHeight = $(document).height();
-  var newWidth = docWidth * 0.07;
-  var newHeight = docHeight * 0.0972461;
+  var newWidth = docWidth * 0.06;
+  var newHeight = docHeight * 0.1605643;
 
   if (docWidth < docHeight) {
     $(".cardImg").css( "width", newWidth);
