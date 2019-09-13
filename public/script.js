@@ -7,12 +7,12 @@ function onResizeFunction() {
 
   if (newWidth < newHeight) {
     $(".cardImg").css( "width", newWidth);
-    newHeight = newWidth * 1.389380530973451;
+    newHeight = newWidth * 1.3893805;
     $(".cardImg").css( "height", newHeight);
   }
   else {
     $(".cardImg").css( "height", newHeight);
-    newWidth = newHeight * 0.7197452229299363‬;
+    newWidth = newHeight * 0.7197452;
     $(".cardImg").css( "width", newWidth);
   }
 }
