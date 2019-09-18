@@ -60,13 +60,13 @@ function resizing() {
  }
 
  function setInitSize() {
-  var curWidth = document.documentElement.clientWidth;
-     var curHeight = document.documentElement.clientHeight;
-     if (curWidth < curHeight) {
-      initScale = (curWidth / 640);
-     }
-     else {
-      initScale = (curHeight / 640);
-     }
-     document.getElementById("mainDiv").style.transform = "scale(" + initScale + ")";
+   var curWidth = document.documentElement.clientWidth;
+   var curHeight = document.documentElement.clientHeight;
+   if (curWidth < curHeight) {
+    initScale = (curWidth / 640);
+   }
+   else {
+    initScale = (curHeight / 640);
+   }
+   document.getElementById("mainDiv").style.transform = "scale(" + initScale + ")";
  }
