@@ -148,7 +148,6 @@ class App extends Component {
         currentComponent.setState({ c6img: pic.cards[5].image})
         console.log("HERE -->" + pic + "<")
       })
-      .then(resizing())
       .catch(console.log);
   };
 
@@ -239,7 +238,7 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <div onLoad="resizing();">
         <nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand" href="#">Pepper</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
