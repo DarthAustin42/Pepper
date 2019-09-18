@@ -102,6 +102,30 @@ class App extends Component {
     // });
   }
 
+  const resizing = () => {
+    var initScale = 1;
+    var scaleAmmount = 1;
+    var curWidth = document.documentElement.clientWidth;
+    var curHeight = document.documentElement.clientHeight;
+    var tempScale = initScale;
+
+    if (curWidth < curHeight) {
+    scaleAmmount = (curWidth / 640);
+       if (curWidth >= 640) {
+        tempScale = 1;
+       }
+    }
+    else {
+    scaleAmmount = (curHeight / 640);
+       if (curHeight >= 640) {
+        tempScale = 1;
+           console.log("HIHIHI");
+       }
+    }
+    document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
+    console.log(scaleAmmount);
+   }
+
   handle_login = (e, data) => {
     var url = "";
     var userN = "";
@@ -237,30 +261,6 @@ class App extends Component {
     const small = (t) => {
       document.getElementById(t).style.transform = "scale(0.5)"
     }
-
-    const resizing = () => {
-      var initScale = 1;
-      var scaleAmmount = 1;
-      var curWidth = document.documentElement.clientWidth;
-      var curHeight = document.documentElement.clientHeight;
-      var tempScale = initScale;
-
-      if (curWidth < curHeight) {
-      scaleAmmount = (curWidth / 640);
-         if (curWidth >= 640) {
-          tempScale = 1;
-         }
-      }
-      else {
-      scaleAmmount = (curHeight / 640);
-         if (curHeight >= 640) {
-          tempScale = 1;
-             console.log("HIHIHI");
-         }
-      }
-      document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
-      console.log(scaleAmmount);
-     }
 
     return (
       <div>
