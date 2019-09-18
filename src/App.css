@@ -103,3 +103,6 @@ img {
   border: solid 1px red;
   position: absolute;
 }
+.gu-mirror {
+  visibility: hidden;
+}
