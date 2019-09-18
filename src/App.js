@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import './App.css';
+import ReactDOM from 'react-dom';
 var dragula = require('react-dragula');
 
 class App extends Component {
