@@ -239,25 +239,27 @@ class App extends Component {
     }
 
     const resizing = () => {
-         var curWidth = document.documentElement.clientWidth;
-         var curHeight = document.documentElement.clientHeight;
-         var tempScale = initScale;
+      var initScale = 1;
+      var scaleAmmount = 1;
+      var curWidth = document.documentElement.clientWidth;
+      var curHeight = document.documentElement.clientHeight;
+      var tempScale = initScale;
 
-         if (curWidth < curHeight) {
-          scaleAmmount = (curWidth / 640);
-             if (curWidth >= 640) {
-              tempScale = 1;
-             }
+      if (curWidth < curHeight) {
+      scaleAmmount = (curWidth / 640);
+         if (curWidth >= 640) {
+          tempScale = 1;
          }
-         else {
-          scaleAmmount = (curHeight / 640);
-             if (curHeight >= 640) {
-              tempScale = 1;
-                 console.log("HIHIHI");
-             }
+      }
+      else {
+      scaleAmmount = (curHeight / 640);
+         if (curHeight >= 640) {
+          tempScale = 1;
+             console.log("HIHIHI");
          }
-         document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
-         console.log(scaleAmmount);
+      }
+      document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
+      console.log(scaleAmmount);
      }
 
     return (
