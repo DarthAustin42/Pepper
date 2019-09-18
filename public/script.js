@@ -20,4 +20,53 @@ function onResizeFunction() {
   var deck3LeftLoc = ((docWidth - deck13Width) / 2);
 
   $("#deck3").css( "left", deck3LeftLoc );
+  console.log("HEYO");
 }
+
+function grow() {
+  document.getElementById("zoomID").style.transform = "scale(1.5)";
+}
+function normal() {
+  document.getElementById("zoomID").style.transform = "scale(1.0)";
+}
+function shrink() {
+  document.getElementById("zoomID").style.transform = "scale(.5)";
+  console.log("SMALL");
+}
+
+var initScale = 1;
+var scaleAmmount = 1;
+
+function resizing() {
+     var curWidth = document.documentElement.clientWidth;
+     var curHeight = document.documentElement.clientHeight;
+     var tempScale = initScale;
+
+     if (curWidth < curHeight) {
+      scaleAmmount = (curWidth / 640);
+         if (curWidth >= 640) {
+          tempScale = 1;
+         }
+     }
+     else {
+      scaleAmmount = (curHeight / 640);
+         if (curHeight >= 640) {
+          tempScale = 1;
+             console.log("HIHIHI");
+         }
+     }
+     document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
+     console.log(scaleAmmount);
+ }
+
+ function setInitSize() {
+  var curWidth = document.documentElement.clientWidth;
+     var curHeight = document.documentElement.clientHeight;
+     if (curWidth < curHeight) {
+      initScale = (curWidth / 640);
+     }
+     else {
+      initScale = (curHeight / 640);
+     }
+     document.getElementById("mainDiv").style.transform = "scale(" + initScale + ")";
+ }

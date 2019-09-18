@@ -69,6 +69,37 @@ class App extends Component {
         .catch(console.log);
 
     }
+    // var initWidth = document.getElementById("mainBody").offsetWidth;
+    // var initHeight = document.getElementById("mainBody").offsetHeight;
+    // var newWidth = initWidth / initWidth;
+    // var newHeight = initHeight / initHeight;
+    //
+    // if (initWidth < initHeight) {
+    //   document.getElementById("zoomID").style.transform = "scale(" + newWidth + ")";
+    // }
+    // else {
+    //   document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
+    // }
+    // document.getElementById("mainBody").style.height = window.innerHeight - 60;
+    //
+    // console.log(window.innerHeight);
+    // window.addEventListener("resize", function(){
+    //   document.getElementById("mainBody").style.height = window.innerHeight - 60;
+    //   console.log(document.getElementById("mainBody").offsetWidth + " : " + initWidth);
+    //   console.log(document.getElementById("mainBody").offsetHeight + " : " + initHeight);
+    //   var width = document.getElementById("mainBody").offsetWidth;
+    //   var height = document.getElementById("mainBody").offsetHeight;
+    //   newWidth = width / initWidth;
+    //   newHeight = height / initHeight;
+    //   if (width < height) {
+    //     newHeight = newWidth
+    //     document.getElementById("zoomID").style.transform = "scale(" + newWidth + ")";
+    //   }
+    //   else {
+    //     newWidth = newHeight;
+    //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
+    //   }
+    // });
   }
 
   handle_login = (e, data) => {
@@ -196,9 +227,19 @@ class App extends Component {
       console.log('Click');
     }
 
+    const large = (t) => {
+      document.getElementById(t).style.transform = "scale(1.5)"
+    }
+    const normal = (t) => {
+      document.getElementById(t).style.transform = "scale(1.0)"
+    }
+    const small = (t) => {
+      document.getElementById(t).style.transform = "scale(0.5)"
+    }
+
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand" href="#">Pepper</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -223,22 +264,54 @@ class App extends Component {
             </div>
           </div>
         </nav>
+
         {this.state.logged_in
-            ? <div style={{ textAlign: "center" }}>
-              <button onClick={() => this.send() }>Change Color</button>
+            ? <div>
+                <div style={{ textAlign: "center" }}>
+                  <button onClick={() => this.send() }>Change Color</button>
+                  <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
+                  <button id="red" onClick={() => this.setColor('red')}>Red</button>
+                </div>
+                <div id="boardDiv">
+                  <div id="mainDiv">
+                    <div class="deck" id="p1Deck">
+                      <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card1" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card2" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card3" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card4" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card5" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card6" onClick={() => imageClick()}></img>
+                      </div>
+                      <div class="deck" id="p2Deck">
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card1" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card2" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card3" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card4" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card5" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card6" onClick={() => imageClick()}></img>
+                      </div>
+                      <div class="deck" id="p3Deck">
+                        <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
+                        <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
+                        <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
+                        <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()}></img>
+                        <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()}></img>
+                        <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()}></img>
+                      </div>
+                      <div class="deck" id="p4Deck">
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card1" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card2" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card3" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card4" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card5" onClick={() => imageClick()}></img>
+                        <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card6" onClick={() => imageClick()}></img>
+                      </div>
+                      <div id="playingField">
 
-              <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-              <button id="red" onClick={() => this.setColor('red')}>Red</button>
-
-              <div id="deck3" class="allDecks">
-                <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
-                <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
-                <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
-                <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()}></img>
-                <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()}></img>
-                <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()}></img>
-              </div>
-              </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             : <div>
               {form}
               </div>}

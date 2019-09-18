@@ -47,6 +47,58 @@ input {
   display: inline;
 }
 
-.allDecks {
+#boardDiv {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mainDiv {
+  width: 445px;
+  height: 445px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform: scale(1.0); /* Standard syntax */
+}
+img {
+  width: 50px;
+  margin: 0px;
+}
+.deck {
+  margin: auto;
+  border: solid 1px black;
+  width: 302px;
+  height: 71px;
+}
+#p1Deck {
+  left: 0px;
+  top: 0px;
+}
+#p2Deck {
+  transform: rotate(90deg);
+  left: 0px;
+  top: 0px;
+  margin-left: -116px;
+  margin-top: 115px;
+}
+#p3Deck {
+  left: 0px;
+  top: 0px;
+  margin-top: 115px;
+}
+#p4Deck {
+  transform: rotate(270deg);
+  left: 0px;
+  top: 0px;
+  margin-left: 257px;
+  margin-top: -257px;
+}
+#playingField {
+  width: 301px;
+  height: 301px;
+  top: 71px;
+  left: 71px;
+  border: solid 1px red;
   position: absolute;
 }
