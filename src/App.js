@@ -102,30 +102,6 @@ class App extends Component {
     // });
   }
 
-  resizing = () => {
-    var initScale = 1;
-    var scaleAmmount = 1;
-    var curWidth = document.documentElement.clientWidth;
-    var curHeight = document.documentElement.clientHeight;
-    var tempScale = initScale;
-
-    if (curWidth < curHeight) {
-    scaleAmmount = (curWidth / 640);
-       if (curWidth >= 640) {
-        tempScale = 1;
-       }
-    }
-    else {
-    scaleAmmount = (curHeight / 640);
-       if (curHeight >= 640) {
-        tempScale = 1;
-           console.log("HIHIHI");
-       }
-    }
-    document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
-    console.log(scaleAmmount);
-   }
-
   handle_login = (e, data) => {
     var url = "";
     var userN = "";
@@ -172,7 +148,6 @@ class App extends Component {
         currentComponent.setState({ c6img: pic.cards[5].image})
         console.log("HERE -->" + pic + "<")
       })
-      .then(this.resizing())
       .catch(console.log);
   };
 
