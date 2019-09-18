@@ -238,6 +238,28 @@ class App extends Component {
       document.getElementById(t).style.transform = "scale(0.5)"
     }
 
+    const resizing = () => {
+         var curWidth = document.documentElement.clientWidth;
+         var curHeight = document.documentElement.clientHeight;
+         var tempScale = initScale;
+
+         if (curWidth < curHeight) {
+          scaleAmmount = (curWidth / 640);
+             if (curWidth >= 640) {
+              tempScale = 1;
+             }
+         }
+         else {
+          scaleAmmount = (curHeight / 640);
+             if (curHeight >= 640) {
+              tempScale = 1;
+                 console.log("HIHIHI");
+             }
+         }
+         document.getElementById("mainDiv").style.transform = "scale(" + scaleAmmount + ")";
+         console.log(scaleAmmount);
+     }
+
     return (
       <div>
         <nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
