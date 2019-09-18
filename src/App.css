@@ -62,8 +62,9 @@ input {
   transform: scale(1.0); /* Standard syntax */
 }
 img {
-  width: 44px;
-  margin: 3px;
+  width: 50px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 .deck {
   margin: auto;
@@ -105,4 +106,10 @@ img {
 }
 .gu-mirror {
   visibility: hidden;
+}
+.gu-transit {
+  border: solid 1px black;
+}
+.p1cards {
+
 }
