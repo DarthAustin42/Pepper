@@ -102,8 +102,7 @@ class App extends Component {
     //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
     //   }
     // });
-    var container = document.getElementById("p3Deck");
-    dragula([container]);
+
   }
 
   handle_login = (e, data) => {
@@ -321,6 +320,10 @@ class App extends Component {
               </div>}
       </div>
     )
+  },
+  componentDidMount: function() {
+    var container = document.getElementById("p3Deck");
+    dragula([container]);
   }
 }
 export default App;
