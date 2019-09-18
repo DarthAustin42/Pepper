@@ -62,8 +62,8 @@ input {
   transform: scale(1.0); /* Standard syntax */
 }
 img {
-  width: 50px;
-  margin: 0px;
+  width: 44px;
+  margin: 3px;
 }
 .deck {
   margin: auto;
@@ -111,5 +111,5 @@ img {
   width: 46px;
 }
 .p1cards {
-  
+
 }
