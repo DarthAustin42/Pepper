@@ -101,6 +101,8 @@ class App extends Component {
     //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
     //   }
     // });
+    var container = React.findDOMNode(this);
+    dragula([container]);
   }
 
   handle_login = (e, data) => {
@@ -237,12 +239,6 @@ class App extends Component {
     const small = (t) => {
       document.getElementById(t).style.transform = "scale(0.5)"
     }
-    dragulaDecorator = (componentBackingInstance) => {
-      if (componentBackingInstance) {
-        let options = { };
-        Dragula([componentBackingInstance], options);
-      }
-    }
 
     return (
       <div>
@@ -297,7 +293,7 @@ class App extends Component {
                         <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card5" onClick={() => imageClick()}></img>
                         <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card6" onClick={() => imageClick()}></img>
                       </div>
-                      <div class="deck" id="p3Deck" ref={this.dragulaDecorator}>
+                      <div class="deck container" id="p3Deck">
                         <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
                         <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
                         <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
