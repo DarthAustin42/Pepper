@@ -101,7 +101,7 @@ class App extends Component {
     //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
     //   }
     // });
-    var container = React.findDOMNode(this);
+    var container = ReactDOM.findDOMNode(this);
     dragula([container]);
   }
 
