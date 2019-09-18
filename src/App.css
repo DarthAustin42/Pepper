@@ -70,6 +70,7 @@ img {
   border: solid 1px black;
   width: 302px;
   height: 71px;
+  padding: 0px;
 }
 #p1Deck {
   left: 0px;
