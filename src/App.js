@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import './App.css';
-import Dragula from 'react-dragula';
+import dragula from 'react-dragula';
 
 class App extends Component {
   constructor() {
