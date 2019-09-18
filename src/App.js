@@ -7,6 +7,23 @@ import SignupForm from './components/SignupForm';
 import './App.css';
 import ReactDOM from 'react-dom';
 var dragula = require('react-dragula');
+var App = React.createClass({
+  render: function () {
+    return <div className='container'>
+      <div>Swap me around</div>
+      <div>Swap her around</div>
+      <div>Swap him around</div>
+      <div>Swap them around</div>
+      <div>Swap us around</div>
+      <div>Swap things around</div>
+      <div>Swap everything around</div>
+    </div>;
+  },
+  componentDidMount: function () {
+    var container = React.findDOMNode(this);
+    dragula([container]);
+  }
+});
 
 class App extends Component {
   constructor() {
@@ -102,7 +119,8 @@ class App extends Component {
     //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
     //   }
     // });
-
+    var container = document.getElementById("p3Deck");
+    dragula([container]);
   }
 
   handle_login = (e, data) => {
@@ -320,10 +338,6 @@ class App extends Component {
               </div>}
       </div>
     )
-  },
-  componentDidMount: function() {
-    var container = document.getElementById("p3Deck");
-    dragula([container]);
   }
 }
 export default App;
