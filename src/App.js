@@ -102,7 +102,7 @@ class App extends Component {
     // });
   }
 
-  const resizing = () => {
+  resizing = () => {
     var initScale = 1;
     var scaleAmmount = 1;
     var curWidth = document.documentElement.clientWidth;
