@@ -102,7 +102,7 @@ class App extends Component {
     //     document.getElementById("zoomID").style.transform = "scale(" + newHeight + ")";
     //   }
     // });
-    var container = ReactDOM.findDOMNode("container");
+    var container = document.getElementById("p3Deck");
     dragula([container]);
   }
 
