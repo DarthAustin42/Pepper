@@ -295,12 +295,12 @@ class App extends Component {
                         <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card6" onClick={() => imageClick()}></img>
                       </div>
                       <div class="deck container" id="p3Deck">
-                        <img class="cardImg" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
-                        <img class="cardImg" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
-                        <img class="cardImg" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
-                        <img class="cardImg" src={this.state.c4img} alt="Card4" onClick={() => imageClick()}></img>
-                        <img class="cardImg" src={this.state.c5img} alt="Card5" onClick={() => imageClick()}></img>
-                        <img class="cardImg" src={this.state.c6img} alt="Card6" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c1img} alt="Card1" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c2img} alt="Card2" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c3img} alt="Card3" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c4img} alt="Card4" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c5img} alt="Card5" onClick={() => imageClick()}></img>
+                        <img class="cardImg p1cards" src={this.state.c6img} alt="Card6" onClick={() => imageClick()}></img>
                       </div>
                       <div class="deck" id="p4Deck">
                         <img src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Card1" onClick={() => imageClick()}></img>

@@ -106,3 +106,10 @@ img {
 .gu-mirror {
   visibility: hidden;
 }
+.gu-transit {
+  border: solid 2px black;
+  width: 46px;
+}
+.p1cards {
+  
+}
