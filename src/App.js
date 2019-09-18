@@ -148,7 +148,7 @@ class App extends Component {
         currentComponent.setState({ c6img: pic.cards[5].image})
         console.log("HERE -->" + pic + "<")
       })
-      .then(resizing());
+      .then(resizing())
       .catch(console.log);
   };
 
